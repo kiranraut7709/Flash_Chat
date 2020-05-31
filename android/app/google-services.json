@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "287224672199",
+    "firebase_url": "https://flash-chat-afaf7.firebaseio.com",
+    "project_id": "flash-chat-afaf7",
+    "storage_bucket": "flash-chat-afaf7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287224672199:android:306d30d070c5824a48b3e2",
+        "android_client_info": {
+          "package_name": "co.KiranPatilRaut.flash_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "287224672199-70bhcbgb3tes4to4mkt51eo3b2p7bf3g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxlZtzuQPR6JzorxtJMNDt-DfwPVsByTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "287224672199-70bhcbgb3tes4to4mkt51eo3b2p7bf3g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
