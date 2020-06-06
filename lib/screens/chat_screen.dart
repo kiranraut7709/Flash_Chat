@@ -36,6 +36,14 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
+//  void messageStream() async {
+//    await for (var snapshot in _firestore.collection('messages').snapshots()) {
+//      for (var message in snapshot.documents) {
+//        print(message.data);
+//      }
+//    }
+//  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,6 +74,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 children: <Widget>[
                   Expanded(
                     child: TextField(
+                      textCapitalization: TextCapitalization.sentences,
                       controller: messageTextController,
                       onChanged: (value) {
                         messageText = value;
@@ -81,7 +90,8 @@ class _ChatScreenState extends State<ChatScreen> {
                       _firestore.collection('messages').add({
                         'text': messageText,
                         'sender': loggedInUser.email,
-                        'time': DateTime.now().millisecondsSinceEpoch,
+                        'server_time': FieldValue.serverTimestamp(),
+                        'local_time': Timestamp.now(),
                       });
                     },
                     child: Text(
@@ -105,7 +115,7 @@ class MessageStream extends StatelessWidget {
     return StreamBuilder<QuerySnapshot>(
       stream: _firestore
           .collection('messages')
-          .orderBy('time', descending: false)
+          .orderBy('server_time', descending: false)
           .snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
